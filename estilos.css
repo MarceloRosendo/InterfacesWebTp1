@@ -80,8 +80,11 @@ header{
 
 /* first-section */
 .first-section{
-    padding: 24px 24px;
     background: #eeeeee;
+}
+
+.padding-default{
+    padding: 24px 24px;
 }
 
 .carousel-inner{
@@ -122,6 +125,10 @@ header{
     margin-right: 24px;
 }
 
+.m-right-8{
+    margin-right: 8px;
+}
+
 .el-table{
     border-right: 1px solid #dddddd;
     text-align: left;
@@ -151,6 +158,19 @@ header{
     }
 }
 
+@media only screen and (max-width: 1439px) {
+    .section-four-responsive{
+        flex-direction: column !important;
+        
+    }
+    .section-four-responsive-rule-2{
+        width: 90vw;
+    }
+
+    .col-md-4{
+        max-width: none
+    }
+}
 /* second section */
 
 .second-section-btn{
@@ -160,4 +180,41 @@ header{
 
 .card-img{
     border-radius: 100%;
+}
+
+/* thirty section */
+
+.card-custom{
+    background: #eeeeee;
+}
+
+/* fourthy section */
+
+.card-2-custom{
+    padding: 0px 0px 16px 0px;
+}
+
+.bottom-separator{
+    border-bottom: solid 2px #c3c3c3;
+}
+.w-custom{
+    width: 42rem;
+    background: red;
+}
+
+/* footer */
+
+.footer{
+    padding: 8px 0px 8px 0px !important;
+}
+
+/* overrides */
+
+.container {
+    width: 100vw!important;
+    padding-left: 0px !important;
+}
+
+.w-100-video {
+    /* width: 100vw !important; */
 }
