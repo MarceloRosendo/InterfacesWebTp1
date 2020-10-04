@@ -218,3 +218,7 @@ header{
 .w-100-video {
     /* width: 100vw !important; */
 }
+
+.responsive-font{
+    font-size: 0.8rem;
+}
