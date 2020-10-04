@@ -1,0 +1,141 @@
+header{
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    padding: 8px;
+    background: #c0c0c0;
+}
+.logo{
+    width: 100px;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    color: #010101;
+}
+
+.margin-right-solid{
+    margin-right: solid red;
+}
+.border-right-menu{
+    border-right: solid;
+}
+/* search-header */
+
+.form-group{
+    border: solid 1px;
+    border-radius: 3px;
+    padding: 0px 8px;
+    width: 240px;
+}
+.form-group input{
+    border: 0px !important;
+}
+.form-group .form-control {
+    padding-left: 2.375rem;
+    background: #c0c0c0;
+}
+
+.form-group .form-control-icon {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 1.3475rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #484e5a;
+}
+
+.form-group .form-control-icon-2 {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 1.3475rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    pointer-events: none;
+    color: #484e5a;
+    top: 8px !important;
+    transform: translateX(200px) !important;
+}
+
+/* search-header */
+
+.mycontent-left {
+    border-right: 1px solid #333;
+  }
+.h-15{
+    height: 15px;
+}
+
+
+/* first-section */
+.first-section{
+    padding: 24px 24px;
+    background: #eeeeee;
+}
+
+.carousel-inner{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-indicators li{
+    width: 8px;
+    height: 8px;
+}
+
+.videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+  }
+.videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+  }
+
+.movie-desc{
+    height: max-content;
+}
+.movie-desc-content{
+    padding-left: 24px;
+}
+.m-top-16{
+    margin-top: 36px;
+}
+
+.m-right-24{
+    margin-right: 24px;
+}
+
+.el-table{
+    border-right: 1px solid #dddddd;
+    text-align: left;
+    padding: 0px 8px 8px 0px;
+}
+
+@media only screen and (max-width: 1023px) {
+    .responsive-flex-reversion{
+        flex-direction: column-reverse !important;
+    }
+
+    .w-50-responsive{
+        width: 100% !important;
+    }
+
+    .videoWrapper iframe {
+        height: 100% !important;
+    }
+
+    .m-top-16-responsive{
+        margin-top: 16px !important;
+    }
+  }

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Portal de filmes</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/carousel/">
+    <!-- <meta http-equiv="refresh" content="2"> -->
+
+    <link href="assets/fa/css/solid.css" rel="stylesheet">
+    <link href="assets/fa/css/brands.css" rel="stylesheet">
+    <link href="assets/fa/css/solid.css" rel="stylesheet">
+    <script defer src="assets/fa/js/all.js"></script>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar navbar-expand-lg navbar-light w-100">
+            <div class="img-container">
+                <img src="assets/yt-logo.png" class="logo">
+            </div>
+            <div class="d-flex justify-content-end">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarToggleExternalContent">
+                <ul class="navbar-nav mt-lg-0 w-100 d-flex justify-content-center">
+                    <li class="nav-item active">
+                        <a class="nav-link mycontent-left h-15" href="#">lançamentos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link mycontent-left h-15" href="#">em destaque</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link mycontent-left h-15" href="#">avaliações</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link mycontent-left h-15" href="#">entrevistas & makingof</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link h-15" href="#">novidades</a>
+                    </li>
+                </ul>
+                <div class="main">
+                    <div class="form-group">
+                        <span class="fa fa-search form-control-icon"></span>
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="fa fa-times-circle form-control-icon-2"></span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="d-flex flex-column justify-content-end w-100 first-section">
+        <div id="myCarousel" class="carousel slide w-100 h-100" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active h-100">
+                    <div class="h-100">
+                        <div class="d-flex flex-column">
+                            <h2 class="text-center"><b>Lançamentos</b></h2>
+
+                            <div class="d-flex flex-row-reverse responsive-flex-reversion m-top-16">
+                                <div class="w-50 w-50-responsive movie-desc m-top-16-responsive">
+                                    <div class="column video movie-desc-content">
+                                        <h3>Nome do filme.</h3>
+                                        <p><b>Sinopse: </b> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                                            do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+                                            ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                                            cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
+                                            est laborum.
+                                        </p>
+                                        <div class="d-flex flex-row">
+                                            <p class="m-right-24"><b>Diretor: </b>
+                                                Darth Vader
+                                            </p>
+                                            <p class="m-right-24"><b>Roteiro: </b>
+                                                Chew Bacca
+                                            </p>
+                                            <p><b>Estreia: </b>
+                                                2020
+                                            </p>
+                                        </div>
+                                        <p><b>Elenco: </b></p>
+                                        <table>
+                                            <tr>
+                                                <td class="el-table">Luke Skywalker</th>
+                                                <td class="el-table">Bobba Fett</th>
+                                                <td class="el-table">Princesa Leia</th>
+                                                <td class="el-table">Han Solo</th>
+                                            </tr>
+                                        </table>
+                                        <p></p><b>Avaliação: </b></p>
+                                        <div class="d-flex flex-row">
+                                            <span class="fa fa-star form-control-icon"></span>
+                                            <span class="fa fa-star form-control-icon"></span>
+                                            <span class="fa fa-star form-control-icon"></span>
+                                            <span class="fa fa-star form-control-icon"></span>
+                                            <span class="fa fa-star form-control-icon"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="videoWrapper w-50 w-50-responsive">
+                                    <iframe class="column video" id="ytplayer" type="text/html"
+                                        src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+                                        frameborder="0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" /></svg>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>Another example headline.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
+                        <rect width="100%" height="100%" fill="#777" /></svg>
+                    <div class="container">
+                        <div class="carousel-caption text-right">
+                            <h1>One more for good measure.</h1>
+                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
+                                gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer> -->
+</body>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+<script src="./js/bootstrap.bundle.min.js"></script>
+
+</html>
