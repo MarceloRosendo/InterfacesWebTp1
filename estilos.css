@@ -37,6 +37,11 @@ header{
     background: #c0c0c0;
 }
 
+.form-group .form-control:first-child {
+    padding-left: 0px;
+    background: #ffffff;
+}
+
 .form-group .form-control-icon {
     position: absolute;
     z-index: 2;
@@ -93,6 +98,7 @@ header{
 .videoWrapper {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 */
+    margin-bottom: -6%;
   }
 .videoWrapper iframe {
     position: absolute;
@@ -120,6 +126,7 @@ header{
     border-right: 1px solid #dddddd;
     text-align: left;
     padding: 0px 8px 8px 0px;
+    color: #4b4b4b;
 }
 
 @media only screen and (max-width: 1023px) {
@@ -138,4 +145,19 @@ header{
     .m-top-16-responsive{
         margin-top: 16px !important;
     }
-  }
+
+    .videoWrapper{
+        margin-bottom: 0% !important;
+    }
+}
+
+/* second section */
+
+.second-section-btn{
+    background: #515151;    
+    color: white;
+}
+
+.card-img{
+    border-radius: 100%;
+}
