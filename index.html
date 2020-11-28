@@ -18,6 +18,13 @@
     <link href="assets/fa/css/brands.css" rel="stylesheet">
     <link href="assets/fa/css/solid.css" rel="stylesheet">
     <script defer src="assets/fa/js/all.js"></script>
+    <script defer src="js/ajax/generalAjax.js"></script>
+    <script defer src="js/ajax/searchAjax.js"></script>
+    <script defer src="js/ajax/redirectMovieAjax.js"></script>
+    <script defer src="js/ajax/loadMoreAjax.js"></script>
+
+    <script src="jquery-1.6.1.js"></script>
+    <script src="my_jquery.js"></script>
     <link rel="stylesheet" href="estilos.css">
 </head>
 
@@ -52,16 +59,35 @@
                         <a class="nav-link h-15" href="#">novidades</a>
                     </li>
                 </ul>
-                <div class="main">
-                    <div class="form-group">
-                        <span class="fa fa-search form-control-icon"></span>
-                        <input type="text" class="form-control" placeholder="Search">
-                        <span class="fa fa-times-circle form-control-icon-2"></span>
-                    </div>
+                <div>
+                    <form class="form-inline my-2 my-lg-0" style="display: inline-flex;">
+                        <input id="search_input" data-toggle="" oninput="onInput()"
+                            class="form-control mr-sm-2 ml-auto" type="search" placeholder="Pesquisar" list="browsers">
+                        <datalist id="browsers"></datalist>
+                    </form>
                 </div>
             </div>
         </nav>
     </header>
+    <div class="modal fade" id="modalSearchFailed" tabindex="99999" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Erro ao acessar a informação</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="modalBody" class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="d-flex flex-column justify-content-end w-100 first-section">
         <div id="myCarousel" class="carousel slide w-100 h-100" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -240,21 +266,15 @@
                 <div class="invisible" style="width: 200px;"></div>
                 <div class="invisible" style="width: 200px;"></div>
                 <div class="form-group">
-                    <select class="form-control" id="exampleFormControlSelect1">
-                        <option>Aventura</option>
-                        <option>Romance</option>
-                        <option>Comédia</option>
-                    </select>
+                    <select id="genreId" class="form-control"></select>
                 </div>
             </div>
-            <div class="d-flex justify-content-around m-top-16">
-                <img src="assets/f1.jpg" width="200px" alt="filme 1">
-                <img src="assets/f2.jpg" alt="filme 2">
-                <img src="assets/f3.jpg" alt="filme 3">
-                <img src="assets/f4.jpg" alt="filme 4">
-            </div>
+            <div id="posteres"></div>
             <div class="d-flex justify-content-end m-top-16">
-                <button class="btn second-section-btn"><i class="fa fa-plus"></i> Carregar mais filmes</button>
+                <button onclick="loadMinus()" class="btn second-section-btn m-right-8"><i class="fa fa-minus"></i>
+                    Carregar menos filmes</button>
+                <button onclick="loadMore()" class="btn second-section-btn"><i class="fa fa-plus"></i> Carregar mais
+                    filmes</button>
             </div>
         </div>
 
