@@ -22,6 +22,7 @@
     <script defer src="js/ajax/searchAjax.js"></script>
     <script defer src="js/ajax/redirectMovieAjax.js"></script>
     <script defer src="js/ajax/loadMoreAjax.js"></script>
+    <script defer src="js/ajax/posterClickAjax.js"></script>
 
     <script src="jquery-1.6.1.js"></script>
     <script src="my_jquery.js"></script>
@@ -61,8 +62,8 @@
                 </ul>
                 <div>
                     <form class="form-inline my-2 my-lg-0" style="display: inline-flex;">
-                        <input id="search_input" data-toggle="" oninput="onInput()"
-                            class="form-control mr-sm-2 ml-auto" type="search" placeholder="Pesquisar" list="browsers">
+                        <input id="search_input" data-toggle="" oninput="onInput()" class="form-control mr-sm-2 ml-auto"
+                            type="search" placeholder="Pesquisar" list="browsers">
                         <datalist id="browsers"></datalist>
                     </form>
                 </div>
@@ -84,6 +85,23 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalCentered" tabindex="999" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="movieTitle"></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="modal_body_2" class="modal-body">
+                </div>
+                <div id="modal_footer_2" class="modal-footer">
                 </div>
             </div>
         </div>

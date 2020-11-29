@@ -1,5 +1,4 @@
 function reqRedirectListener() {
-    console.log('entrou no redirect Listener')
     let obj = JSON.parse(this.responseText)
     if (isEmpty(obj.homepage)) {
         erroModal("O filme " + obj.original_title + " não possui página no DBMovies")

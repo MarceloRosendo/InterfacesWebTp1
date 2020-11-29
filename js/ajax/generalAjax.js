@@ -1,16 +1,43 @@
 var moviesLoaded = 4
 const api_key = "9f1afb0c0720b5f039007f83ce6b0938"
 var genero = "Action"
+var imageBase = 'https://image.tmdb.org/t/p/w500/'
+
 function reqListener() {
     console.log('entrou no reg Listener')
     let obj = JSON.parse(this.responseText)
 };
 
+function detailsListener() {
+    let obj = JSON.parse(this.responseText)
+    moreDetailsModal(obj)
+};
+
+// modais
 function erroModal(texto) {
     document.getElementById("modalBody").innerHTML = texto
     $("#modalSearchFailed").modal('show')
 }
 
+function moreDetailsModal(obj) {
+    let imgTagBuilder = '<img onclick="" class="img-responsive img-modal-detail" src="' + getImageLink(obj.poster_path) + '"/>'
+
+    let textBuilder = '<p class="text-justify"><b>Descrição: </b>' + obj.overview + '</p>'
+    textBuilder += '<p class="text-justify"><b>Data de lançamento: </b>' + obj.release_date + '</p>'
+
+    let modalBodyContent = imgTagBuilder + textBuilder
+
+    document.getElementById("movieTitle").innerHTML = obj.original_title
+    document.getElementById("modal_body_2").innerHTML = modalBodyContent
+
+    let footerContent = '<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>'
+    footerContent += '<button onclick="redirectToMovieHomePage('+obj.id+')" type="button" class="btn btn-primary">Ir para a página do filme</button>'
+    document.getElementById("modal_footer_2").innerHTML = footerContent
+
+    $("#modalCentered").modal('show')
+}
+
+// modais
 function genreListener() {
     let obj = JSON.parse(this.responseText)
     document.getElementById("genreId").innerHTML = ""
@@ -26,8 +53,11 @@ function firstMoviesListener() {
     document.getElementById("posteres").innerHTML += createPosterSection(obj)
 }
 
+function getImageLink(imageHash) {
+    return imageBase + imageHash
+}
+
 function createPosterSection(imgArray) {
-    var imageBase = 'https://image.tmdb.org/t/p/w500/'
     var section = ''
     var imgs = ""
     let imgIndex = 0
@@ -38,8 +68,7 @@ function createPosterSection(imgArray) {
         imgs = ""
         for (let index = 0; index < 4; index++) {
             const element = imgArray.results[imgIndex];
-            
-            imgs += "<div class=\"view overlay\"><img class=\"img-fluid\" src=" + imageBase + element.poster_path + " width=\"200px\"><div class=\"mask flex-center rgba-red-strong\"><p class=\"white-text\">Light overlay</p></div></div>"
+            imgs += "<img class=\"zoom\" onclick=\"openModalWithDetails(" + element.id + ")\" src=" + getImageLink(element.poster_path) + " width=\"200px\">"
             imgIndex++
         }
         section += imgs
@@ -51,24 +80,31 @@ function getGenrePathApi() {
     return 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + api_key + '&language=pt-BR'
 }
 
-function getGenrePathApi() {
-    return 'https://api.themoviedb.org/3/genre/movie/list?api_key=' + api_key + '&language=pt-BR'
-}
-
 // este metodo retorna o link da api para retornar os dados dos filme via código
 function getApiPathByCode(codFilme) {
-    let apiBase = "https://api.themoviedb.org/3/movie/(cod_filme)?api_key=" + api_key;
+    let apiBase = "https://api.themoviedb.org/3/movie/(cod_filme)?api_key=" + api_key + "&language=pt-BR";
     return apiBase.replace("(cod_filme)", codFilme)
 }
 
 function getApiPathForGenreId(genre) {
-    return 'https://api.themoviedb.org/3/search/movie?api_key=' + api_key + '&page=1&include_adult=false&query=A&with_genres="' + genre
+    return 'https://api.themoviedb.org/3/search/movie?api_key=' + api_key + '&page=1&include_adult=false&language=pt-BR&query=A&with_genres="' + genre
 }
 
 // função que executa a chamada rest para o link da busca do filme por id
 function getApiData(movie) {
     var oReq = new XMLHttpRequest();
     oReq.onload = reqListener;
+    oReq.open("get", getApiPathByCode(movie), true);
+    try {
+        oReq.send();
+    } catch (error) {
+        console.log('error on api retriaving', error)
+    }
+}
+
+function getMovieDetails(movie) {
+    var oReq = new XMLHttpRequest();
+    oReq.onload = detailsListener;
     oReq.open("get", getApiPathByCode(movie), true);
     try {
         oReq.send();
